@@ -1,0 +1,66 @@
+{
+  "chain": {
+    "info-json": "[{\"chain-id\":68840142,\"parent-chain-id\":11155111,\"chain-name\":\"frame-testnet\",\"sequencer-url\":\"https://rpc.testnet.frame.xyz/http\",\"feed-url\":\"wss://rpc.testnet.frame.xyz/feed\", \"chain-config\":{\"chainId\":68840142,\"homesteadBlock\":0,\"daoForkBlock\":null,\"daoForkSupport\":true,\"eip150Block\":0,\"eip150Hash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"eip155Block\":0,\"eip158Block\":0,\"byzantiumBlock\":0,\"constantinopleBlock\":0,\"petersburgBlock\":0,\"istanbulBlock\":0,\"muirGlacierBlock\":0,\"berlinBlock\":0,\"londonBlock\":0,\"clique\":{\"period\":0,\"epoch\":0},\"arbitrum\":{\"EnableArbOS\":true,\"AllowDebugPrecompiles\":false,\"DataAvailabilityCommittee\":false,\"InitialArbOSVersion\":10,\"InitialChainOwner\":\"0x657228c0c2f3e78072a203e874b3f2136e8de2ae\",\"GenesisBlockNum\":0}},\"rollup\":{\"bridge\":\"0x62Ca56aA7a475d4a9170855fD184eE60454f96a8\",\"inbox\":\"0xcFf97680B719747037373B80c15e4Dd251C9fD83\",\"sequencer-inbox\":\"0x16e39fe817Ea69B9582301dB642EDb9A4A330a71\",\"rollup\":\"0x4f56B46c1C061866922428c6A68Bdd926164821a\",\"validator-utils\":\"0x956FEc080121c476ecc15F716D2D2E0145ED20e7\",\"validator-wallet-creator\":\"0xeA110cFB061dF5d55f449798eC17269C70B24A0d\",\"deployed-at\":4523207}}]",
+    "name": "frame-testnet"
+  },
+  "parent-chain": {
+    "connection": {
+      "url": <SEPOLIA_RPC_HERE>
+    }
+  },
+  "http": {
+    "addr": "0.0.0.0",
+    "port": 8547,
+    "vhosts": "*",
+    "corsdomain": "*",
+    "api": [
+      "eth",
+      "net",
+      "web3",
+      "arb",
+      "debug",
+      "txpool"
+    ]
+  },
+  "ws": {
+    "addr": "0.0.0.0",
+    "port": 8548,
+    "api": [
+      "eth",
+      "net",
+      "web3",
+      "arb",
+      "debug",
+      "txpool"
+    ]
+  },
+  "node": {
+    "feed": {
+      "output": {
+        "enable": false,
+        "port": 9642
+      }
+    },
+    "sequencer": {
+      "enable": false
+    },
+    "delayed-sequencer": {
+      "enable": false,
+      "finalize-distance": 10,
+      "require-full-finality": false
+    },
+    "batch-poster": {
+      "max-size": 90000,
+      "enable": false
+    },
+    "caching": {
+      "archive": true
+    },
+    "forwarding-target": "https://rpc.testnet.frame.xyz/http",
+    "block-validator": {
+      "enable": true,
+      "validation-server": "ws://127.0.0.1:8548",
+      "current-module-root": "0xc24ad8aae2d87240223dd4319720ec3ce1088f8217afdec966502f09d808a15d"
+    }
+  }
+}
